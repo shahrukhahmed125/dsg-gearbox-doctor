@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Technical Blog & Transmission Insights | DSG Gearbox Doctor</title>
+  <meta name="description" content="Technical breakdowns, diagnostic guides, and maintenance tips for VAG dual-clutch transmissions, DQ200 mechatronics, and Haldex 4WD systems." />
+  <meta property="og:title" content="Technical Hub & DSG Insights | DSG Gearbox Doctor" />
+  <link rel="icon" type="image/svg+xml" href="./logo.svg" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <canvas id="ambientCanvas" class="ambient-bg-canvas"></canvas>
+  <div id="ambientGlowFollower" class="ambient-glow-follower"></div>
+  <div class="carbon-grid-overlay"></div>
+
+  <!-- Mobile Drawer -->
+  <div id="drawerBackdrop" class="drawer-backdrop"></div>
+  <aside id="mobileDrawer" class="mobile-drawer" aria-label="Mobile Navigation">
+    <div>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+        <a href="index.html" class="brand-link">
+          <img src="./logo.svg" alt="DSG Gearbox Doctor Logo" class="brand-logo-img" />
+          <div class="brand-name-group"><span class="brand-title">DSG <span>DOCTOR</span></span><span class="brand-tagline">Transmission Specialists</span></div>
+        </a>
+        <button class="mobile-drawer-close" style="background:none; border:none; color:#ffffff; font-size:1.5rem; cursor:pointer;"><i class="fas fa-times"></i></button>
+      </div>
+      <ul class="mobile-nav-list">
+        <li><a href="index.html" class="mobile-nav-link">Home <i class="fas fa-chevron-right"></i></a></li>
+        <li><a href="about.html" class="mobile-nav-link">About Us <i class="fas fa-chevron-right"></i></a></li>
+        <li class="mobile-has-submenu">
+          <a href="services.html" class="mobile-nav-link">Specialist Services <i class="fas fa-chevron-down"></i></a>
+          <ul class="mobile-submenu">
+            <li><a href="services.html"><i class="fas fa-th-large"></i> All Services Catalog</a></li>
+            <li><a href="service-dsg-repair.html"><i class="fas fa-tools"></i> DSG Gearbox Repair</a></li>
+            <li><a href="service-dsg-servicing.html"><i class="fas fa-oil-can"></i> DSG Fluid & Filter Service</a></li>
+            <li><a href="service-haldex-servicing.html"><i class="fas fa-car"></i> Haldex 4WD Servicing</a></li>
+            <li><a href="service-mechatronic-repair.html"><i class="fas fa-microchip"></i> Mechatronic Diagnostics</a></li>
+          </ul>
+        </li>
+        <li><a href="blog.html" class="mobile-nav-link active">Technical Hub <i class="fas fa-chevron-right"></i></a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact & Workshop <i class="fas fa-chevron-right"></i></a></li>
+      </ul>
+    </div>
+    <div class="mobile-drawer-footer">
+      <a href="tel:07989062449" class="btn btn-secondary" style="width: 100%;"><i class="fas fa-phone-alt" style="color: var(--accent-red);"></i> Call: 07989 062449</a>
+      <a href="contact.html" class="btn btn-primary" style="width: 100%;"><i class="fas fa-calendar-check"></i> Book Diagnosis</a>
+    </div>
+  </aside>
+
+  <!-- Navbar -->
+  <header id="siteHeader" class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-link">
+        <img src="./logo.svg" alt="DSG Gearbox Doctor Official Badge" class="brand-logo-img" />
+        <div class="brand-name-group"><span class="brand-title">DSG <span>DOCTOR</span></span><span class="brand-tagline">Keeping You On The Road</span></div>
+      </a>
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-item-has-dropdown">
+            <a href="services.html" class="nav-link">Specialist Services <i class="fas fa-angle-down" style="font-size:0.75rem;"></i></a>
+            <ul class="nav-dropdown">
+              <li><a href="services.html" class="nav-dropdown-link"><i class="fas fa-table-list"></i> Master Catalog</a></li>
+              <li><a href="service-dsg-repair.html" class="nav-dropdown-link"><i class="fas fa-cogs"></i> DSG Gearbox Repair</a></li>
+              <li><a href="service-dsg-servicing.html" class="nav-dropdown-link"><i class="fas fa-oil-can"></i> DSG Fluid & Filter</a></li>
+              <li><a href="service-haldex-servicing.html" class="nav-dropdown-link"><i class="fas fa-sync-alt"></i> Haldex 4WD Servicing</a></li>
+              <li><a href="service-mechatronic-repair.html" class="nav-dropdown-link"><i class="fas fa-microchip"></i> Mechatronic Diagnostics</a></li>
+            </ul>
+          </li>
+          <li><a href="blog.html" class="nav-link active">Technical Hub</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="tel:07989062449" class="header-phone"><i class="fas fa-headset"></i> 07989 062449</a>
+        <a href="contact.html" class="btn btn-primary btn-sm"><span class="pulse-indicator"></span> Book Diagnosis</a>
+        <button id="mobileToggle" class="mobile-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Blog Hero -->
+    <section class="hero-section" style="padding-bottom: 2rem;">
+      <div class="container">
+        <div class="section-header text-left">
+          <div class="section-badge"><i class="fas fa-book-open"></i> Technical Intelligence</div>
+          <h1>Transmission Engineering Insights & <br /><span class="text-gradient-red">Diagnostic Teardowns</span></h1>
+          <p style="max-width: 75ch; font-size: 1.15rem;">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+          </p>
+        </div>
+
+        <!-- Interactive Category Filter Tabs -->
+        <div class="blog-filter-bar">
+          <button type="button" class="filter-chip active" data-filter="all">All Articles</button>
+          <button type="button" class="filter-chip" data-filter="mechatronics">Mechatronic Repair</button>
+          <button type="button" class="filter-chip" data-filter="haldex">Haldex 4WD</button>
+          <button type="button" class="filter-chip" data-filter="dsg-care">DSG Maintenance</button>
+          <button type="button" class="filter-chip" data-filter="trade">Trade Best Practices</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Articles Grid -->
+    <section class="section-padding" style="padding-top: 1rem;">
+      <div class="container">
+        <div class="blog-grid">
+          <!-- Article 1 (Featured) -->
+          <article class="blog-card" data-category="mechatronics">
+            <div class="blog-card-media">
+              <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=600&q=80" alt="DQ200 Mechatronics Teardown" class="blog-card-img" />
+              <span class="blog-category-tag">Mechatronics</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-meta-row">
+                <span><i class="far fa-clock"></i> 7 min read</span>
+                <span><i class="far fa-calendar-alt"></i> Sept 2026</span>
+              </div>
+              <h3>Diagnosing P17BF: The Complete Guide to DQ200 Accumulator Failures</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquet quam id dui posuere blandit. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
+              </p>
+              <a href="blog-single.html" class="blog-read-link">
+                Read Full Teardown <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Article 2 -->
+          <article class="blog-card" data-category="haldex">
+            <div class="blog-card-media">
+              <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80" alt="Haldex Generation 5 Servicing" class="blog-card-img" />
+              <span class="blog-category-tag" style="background: var(--accent-blue);">Haldex 4WD</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-meta-row">
+                <span><i class="far fa-clock"></i> 5 min read</span>
+                <span><i class="far fa-calendar-alt"></i> Aug 2026</span>
+              </div>
+              <h3>Why Dealer Haldex Fluid Changes Leave Pre-Charge Pumps to Fail</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in ipsum id orci porta dapibus. Sed do eiusmod tempor incididunt ut labore et dolore.
+              </p>
+              <a href="blog-single.html" class="blog-read-link">
+                Read Full Teardown <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Article 3 -->
+          <article class="blog-card" data-category="dsg-care">
+            <div class="blog-card-media">
+              <img src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=600&q=80" alt="Dual Clutch Pack Tolerances" class="blog-card-img" />
+              <span class="blog-category-tag">DSG Maintenance</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-meta-row">
+                <span><i class="far fa-clock"></i> 6 min read</span>
+                <span><i class="far fa-calendar-alt"></i> Aug 2026</span>
+              </div>
+              <h3>Wet Clutch vs Dry Clutch DSG: Identifying Key Wear Characteristics</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Nulla porttitor accumsan tincidunt.
+              </p>
+              <a href="blog-single.html" class="blog-read-link">
+                Read Full Teardown <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Article 4 -->
+          <article class="blog-card" data-category="trade">
+            <div class="blog-card-media">
+              <img src="https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=600&q=80" alt="Workshop Trade Protocol" class="blog-card-img" />
+              <span class="blog-category-tag">Trade Best Practices</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-meta-row">
+                <span><i class="far fa-clock"></i> 8 min read</span>
+                <span><i class="far fa-calendar-alt"></i> July 2026</span>
+              </div>
+              <h3>Trade Workshop Guide: Safely Bench-Testing VAG TCUs Before Mail-Order</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies ligula sed magna dictum porta. Donec rutrum congue leo eget malesuada.
+              </p>
+              <a href="blog-single.html" class="blog-read-link">
+                Read Full Teardown <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Article 5 -->
+          <article class="blog-card" data-category="mechatronics">
+            <div class="blog-card-media">
+              <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=600&q=80" alt="Solenoid Calibration" class="blog-card-img" />
+              <span class="blog-category-tag">Mechatronics</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-meta-row">
+                <span><i class="far fa-clock"></i> 6 min read</span>
+                <span><i class="far fa-calendar-alt"></i> July 2026</span>
+              </div>
+              <h3>Solving the Flashing Spanner: Step-by-Step VAG TCU Diagnostics</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.
+              </p>
+              <a href="blog-single.html" class="blog-read-link">
+                Read Full Teardown <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Article 6 -->
+          <article class="blog-card" data-category="dsg-care">
+            <div class="blog-card-media">
+              <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=600&q=80" alt="Transmission Fluid Change Timing" class="blog-card-img" />
+              <span class="blog-category-tag">DSG Maintenance</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-meta-row">
+                <span><i class="far fa-clock"></i> 4 min read</span>
+                <span><i class="far fa-calendar-alt"></i> June 2026</span>
+              </div>
+              <h3>The 40,000-Mile Myth: When Enthusiast Drivers Should Change DSG Oil</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur arcu erat accumsan.
+              </p>
+              <a href="blog-single.html" class="blog-read-link">
+                Read Full Teardown <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Consultation Banner -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="booking-funnel-card" style="text-align: center;">
+          <div class="section-badge"><i class="fas fa-wrench"></i> Expert Guidance</div>
+          <h2>Encountering a Complex Diagnostic Code?</h2>
+          <p style="margin: 0 auto 2rem auto;">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Call Adam directly or submit your fault code reading for senior engineering advice.
+          </p>
+          <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+            <a href="tel:07989062449" class="btn btn-primary btn-lg"><i class="fas fa-phone-alt"></i> Call: 07989 062449</a>
+            <a href="contact.html" class="btn btn-secondary btn-lg"><i class="fas fa-stethoscope"></i> Request Diagnostics</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-col">
+          <a href="index.html" class="brand-link" style="margin-bottom: 1rem;">
+            <img src="./logo.svg" alt="DSG Gearbox Doctor Logo" class="brand-logo-img" />
+            <div class="brand-name-group"><span class="brand-title">DSG <span>DOCTOR</span></span><span class="brand-tagline">Keeping You On The Road</span></div>
+          </a>
+          <p class="footer-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Technical transmission insights.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home Overview</a></li>
+            <li><a href="about.html"><i class="fas fa-chevron-right"></i> Company & Story</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services Catalog</a></li>
+            <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact & Workshop</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Specialist Services</h4>
+          <ul class="footer-links-list">
+            <li><a href="service-dsg-repair.html"><i class="fas fa-chevron-right"></i> DSG Gearbox Repair</a></li>
+            <li><a href="service-dsg-servicing.html"><i class="fas fa-chevron-right"></i> Fluid & Filter Service</a></li>
+            <li><a href="service-haldex-servicing.html"><i class="fas fa-chevron-right"></i> Haldex 4WD Servicing</a></li>
+            <li><a href="service-mechatronic-repair.html"><i class="fas fa-chevron-right"></i> Mechatronic Rebuilds</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Direct Workshop Line</h4>
+          <div class="footer-contact-item"><i class="fas fa-phone-alt"></i><div><a href="tel:07989062449" style="color:#ffffff; font-weight:800;">07989 062449</a><div style="font-size:0.8125rem; color:var(--text-muted);">Adam - Lead Engineer</div></div></div>
+          <div class="footer-contact-item"><i class="fas fa-envelope"></i><div><a href="mailto:kirklandadam10@gmail.com" style="color:#ffffff;">kirklandadam10@gmail.com</a></div></div>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <div>&copy; 2026 DSG Gearbox Doctor. All rights reserved.</div>
+        <div class="footer-legal-links">
+          <a href="terms.html">Terms & Conditions</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="refunds.html">Refund & Return Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>

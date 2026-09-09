@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Contact & Workshop Dispatch | DSG Gearbox Doctor UK</title>
+  <meta name="description" content="Get in touch with Adam and the DSG Gearbox Doctor technical team. Book diagnostic slots, request trade B2B quotes, or arrange TCU courier dispatch." />
+  <meta property="og:title" content="Contact Workshop & Diagnostic Dispatch | DSG Gearbox Doctor" />
+  <link rel="icon" type="image/svg+xml" href="./logo.svg" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <canvas id="ambientCanvas" class="ambient-bg-canvas"></canvas>
+  <div id="ambientGlowFollower" class="ambient-glow-follower"></div>
+  <div class="carbon-grid-overlay"></div>
+
+  <!-- Mobile Drawer -->
+  <div id="drawerBackdrop" class="drawer-backdrop"></div>
+  <aside id="mobileDrawer" class="mobile-drawer" aria-label="Mobile Navigation">
+    <div>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+        <a href="index.html" class="brand-link">
+          <img src="./logo.svg" alt="DSG Gearbox Doctor Logo" class="brand-logo-img" />
+          <div class="brand-name-group"><span class="brand-title">DSG <span>DOCTOR</span></span><span class="brand-tagline">Transmission Specialists</span></div>
+        </a>
+        <button class="mobile-drawer-close" style="background:none; border:none; color:#ffffff; font-size:1.5rem; cursor:pointer;"><i class="fas fa-times"></i></button>
+      </div>
+      <ul class="mobile-nav-list">
+        <li><a href="index.html" class="mobile-nav-link">Home <i class="fas fa-chevron-right"></i></a></li>
+        <li><a href="about.html" class="mobile-nav-link">About Us <i class="fas fa-chevron-right"></i></a></li>
+        <li class="mobile-has-submenu">
+          <a href="services.html" class="mobile-nav-link">Specialist Services <i class="fas fa-chevron-down"></i></a>
+          <ul class="mobile-submenu">
+            <li><a href="services.html"><i class="fas fa-th-large"></i> All Services Catalog</a></li>
+            <li><a href="service-dsg-repair.html"><i class="fas fa-tools"></i> DSG Gearbox Repair</a></li>
+            <li><a href="service-dsg-servicing.html"><i class="fas fa-oil-can"></i> DSG Fluid & Filter Service</a></li>
+            <li><a href="service-haldex-servicing.html"><i class="fas fa-car"></i> Haldex 4WD Servicing</a></li>
+            <li><a href="service-mechatronic-repair.html"><i class="fas fa-microchip"></i> Mechatronic Diagnostics</a></li>
+          </ul>
+        </li>
+        <li><a href="blog.html" class="mobile-nav-link">Technical Hub <i class="fas fa-chevron-right"></i></a></li>
+        <li><a href="contact.html" class="mobile-nav-link active">Contact & Workshop <i class="fas fa-chevron-right"></i></a></li>
+      </ul>
+    </div>
+    <div class="mobile-drawer-footer">
+      <a href="tel:07989062449" class="btn btn-secondary" style="width: 100%;"><i class="fas fa-phone-alt" style="color: var(--accent-red);"></i> Call: 07989 062449</a>
+      <a href="contact.html" class="btn btn-primary" style="width: 100%;"><i class="fas fa-calendar-check"></i> Book Diagnosis</a>
+    </div>
+  </aside>
+
+  <!-- Navbar -->
+  <header id="siteHeader" class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-link">
+        <img src="./logo.svg" alt="DSG Gearbox Doctor Official Badge" class="brand-logo-img" />
+        <div class="brand-name-group"><span class="brand-title">DSG <span>DOCTOR</span></span><span class="brand-tagline">Keeping You On The Road</span></div>
+      </a>
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-item-has-dropdown">
+            <a href="services.html" class="nav-link">Specialist Services <i class="fas fa-angle-down" style="font-size:0.75rem;"></i></a>
+            <ul class="nav-dropdown">
+              <li><a href="services.html" class="nav-dropdown-link"><i class="fas fa-table-list"></i> Master Catalog</a></li>
+              <li><a href="service-dsg-repair.html" class="nav-dropdown-link"><i class="fas fa-cogs"></i> DSG Gearbox Repair</a></li>
+              <li><a href="service-dsg-servicing.html" class="nav-dropdown-link"><i class="fas fa-oil-can"></i> DSG Fluid & Filter</a></li>
+              <li><a href="service-haldex-servicing.html" class="nav-dropdown-link"><i class="fas fa-sync-alt"></i> Haldex 4WD Servicing</a></li>
+              <li><a href="service-mechatronic-repair.html" class="nav-dropdown-link"><i class="fas fa-microchip"></i> Mechatronic Diagnostics</a></li>
+            </ul>
+          </li>
+          <li><a href="blog.html" class="nav-link">Technical Hub</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="tel:07989062449" class="header-phone"><i class="fas fa-headset"></i> 07989 062449</a>
+        <a href="contact.html" class="btn btn-primary btn-sm"><span class="pulse-indicator"></span> Book Diagnosis</a>
+        <button id="mobileToggle" class="mobile-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Contact Hero -->
+    <section class="hero-section" style="padding-bottom: 2rem;">
+      <div class="container">
+        <div class="section-header text-left">
+          <div class="section-badge"><i class="fas fa-headset"></i> Direct Technical Dispatch</div>
+          <h1>Connect With Our Senior <br /><span class="text-gradient-red">Transmission Engineers</span></h1>
+          <p style="max-width: 75ch; font-size: 1.15rem;">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Contact & Workshop Info Grid -->
+    <section class="section-padding" style="padding-top: 1rem;">
+      <div class="container">
+        <div class="booking-funnel-card">
+          <div class="funnel-grid">
+            <!-- Left Column: Direct Workshop Details -->
+            <div>
+              <div class="section-badge blue"><i class="fas fa-id-card"></i> Workshop Hub</div>
+              <h2>Direct Contact Channels</h2>
+              <p style="margin-bottom: 2rem;">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Cras ultricies ligula sed magna dictum porta.
+              </p>
+
+              <!-- Phone Box -->
+              <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.5rem; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                  <div style="width: 48px; height: 48px; border-radius: 50%; background: rgba(229, 9, 20, 0.15); border: 1px solid var(--accent-red); display: flex; align-items: center; justify-content: center; color: var(--accent-red); font-size: 1.25rem;">
+                    <i class="fas fa-phone-alt"></i>
+                  </div>
+                  <div>
+                    <div style="font-weight: 800; color: #ffffff; font-size: 1.1rem;">Telephone / WhatsApp</div>
+                    <div style="margin: 0.25rem 0;">
+                      <a href="tel:07989062449" style="color: #ffffff; font-weight: 800; font-size: 1.35rem;">
+                        07989 062449
+                      </a>
+                    </div>
+                    <div style="color: var(--text-muted); font-size: 0.8125rem;">Direct Line with Adam (Senior Specialist)</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Email Box -->
+              <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.5rem; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                  <div style="width: 48px; height: 48px; border-radius: 50%; background: rgba(0, 180, 216, 0.15); border: 1px solid var(--accent-blue); display: flex; align-items: center; justify-content: center; color: var(--accent-blue); font-size: 1.25rem;">
+                    <i class="fas fa-envelope-open-text"></i>
+                  </div>
+                  <div>
+                    <div style="font-weight: 800; color: #ffffff; font-size: 1.1rem;">Email Diagnostic Inquiries</div>
+                    <div style="margin: 0.25rem 0;">
+                      <a href="mailto:kirklandadam10@gmail.com" style="color: #ffffff; font-weight: 600; font-size: 1.05rem;">
+                        kirklandadam10@gmail.com
+                      </a>
+                    </div>
+                    <div style="color: var(--text-muted); font-size: 0.8125rem;">Diagnostic scans, VAG-COM logs & trade inquiries</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Hours & Coverage -->
+              <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.5rem;">
+                <h4 style="color: #ffffff; margin-bottom: 0.75rem;"><i class="fas fa-clock" style="color: var(--accent-red);"></i> Operating Hours</h4>
+                <div style="display: flex; justify-content: space-between; font-size: 0.875rem; padding: 0.25rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                  <span style="color: var(--text-muted);">Monday – Friday</span>
+                  <span style="color: #ffffff; font-weight: 600;">8:00 AM – 6:00 PM</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.875rem; padding: 0.25rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                  <span style="color: var(--text-muted);">Saturday</span>
+                  <span style="color: #ffffff; font-weight: 600;">8:30 AM – 1:00 PM</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.875rem; padding: 0.25rem 0;">
+                  <span style="color: var(--text-muted);">Sunday / Emergency</span>
+                  <span style="color: var(--accent-red); font-weight: 600;">On-Call Dispatch</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Interactive Form Funnel -->
+            <div>
+              <div id="bookingSuccessCard" class="form-success-card">
+                <div class="success-icon-wrap"><i class="fas fa-check"></i></div>
+                <h3 style="color: #ffffff; margin-bottom: 0.5rem;">Diagnostic Request Dispatched!</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                  Thank you. Adam and our transmission team have received your details and will call you back within 60 minutes.
+                </p>
+                <button type="button" id="bookAnotherBtn" class="btn btn-secondary"><i class="fas fa-redo"></i> Submit Another Inquiry</button>
+              </div>
+
+              <form id="bookingFunnelForm">
+                <div class="audience-toggle-group">
+                  <label class="audience-card-label selected">
+                    <input type="radio" name="clientType" value="retail" checked />
+                    <div>
+                      <div style="font-weight: 700; font-size: 0.9375rem; color: #ffffff;">Retail Driver</div>
+                      <small style="color: var(--text-muted); font-size: 0.75rem;">Personal vehicle owner</small>
+                    </div>
+                  </label>
+                  <label class="audience-card-label">
+                    <input type="radio" name="clientType" value="trade" />
+                    <div>
+                      <div style="font-weight: 700; font-size: 0.9375rem; color: #ffffff;">Trade Garage</div>
+                      <small style="color: var(--text-muted); font-size: 0.75rem;">Commercial B2B account</small>
+                    </div>
+                  </label>
+                </div>
+
+                <div id="tradeDiscountNote" style="display: none; background: rgba(0, 180, 216, 0.1); border: 1px solid rgba(0, 180, 216, 0.3); border-radius: var(--radius-sm); padding: 0.625rem 0.875rem; margin-bottom: 1.25rem; font-size: 0.8125rem; color: var(--accent-blue);">
+                  <i class="fas fa-tag"></i> Trade account priority turnaround and courier pickup available.
+                </div>
+
+                <div class="form-group-floating">
+                  <input type="text" id="bookingName" class="form-control-floating" placeholder=" " required />
+                  <label for="bookingName" class="form-label-floating">Full Name / Workshop Contact *</label>
+                </div>
+
+                <div class="form-group-floating">
+                  <input type="tel" id="bookingPhone" class="form-control-floating" placeholder=" " required />
+                  <label for="bookingPhone" class="form-label-floating">Phone Number *</label>
+                </div>
+
+                <div class="form-group-floating">
+                  <input type="email" id="bookingEmail" class="form-control-floating" placeholder=" " />
+                  <label for="bookingEmail" class="form-label-floating">Email Address</label>
+                </div>
+
+                <div class="form-group-floating">
+                  <input type="text" id="bookingVehicle" class="form-control-floating" placeholder=" " />
+                  <label for="bookingVehicle" class="form-label-floating">Vehicle Registration or Make / Model</label>
+                </div>
+
+                <div class="form-group-floating">
+                  <select id="bookingServiceType" class="form-control-floating" style="padding-top: 1rem; color: #ffffff; background: #141b24;">
+                    <option value="dsg-diagnosis">Full DSG Diagnostic Assessment</option>
+                    <option value="dsg-repair">DSG Mechanical Gearbox Repair / Clutches</option>
+                    <option value="dsg-service">DSG Transmission Fluid & Filter Flush</option>
+                    <option value="haldex-service">Haldex 4WD Coupling & Pump Cleaning</option>
+                    <option value="mechatronic-rebuild">Mechatronic Unit Overhaul / TCU Cloning</option>
+                    <option value="other">Trade Garage Bulk Inquiry</option>
+                  </select>
+                </div>
+
+                <div class="form-group-floating">
+                  <textarea id="bookingNotes" class="form-control-floating" rows="3" placeholder=" " style="min-height: 90px;"></textarea>
+                  <label for="bookingNotes" class="form-label-floating">Symptoms, error codes or gearbox model</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                  Transmit Inquiry to Adam <i class="fas fa-arrow-right"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-col">
+          <a href="index.html" class="brand-link" style="margin-bottom: 1rem;">
+            <img src="./logo.svg" alt="DSG Gearbox Doctor Logo" class="brand-logo-img" />
+            <div class="brand-name-group"><span class="brand-title">DSG <span>DOCTOR</span></span><span class="brand-tagline">Keeping You On The Road</span></div>
+          </a>
+          <p class="footer-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Specialist dual-clutch transmission engineering.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home Overview</a></li>
+            <li><a href="about.html"><i class="fas fa-chevron-right"></i> Company & Story</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services Catalog</a></li>
+            <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact & Workshop</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Specialist Services</h4>
+          <ul class="footer-links-list">
+            <li><a href="service-dsg-repair.html"><i class="fas fa-chevron-right"></i> DSG Gearbox Repair</a></li>
+            <li><a href="service-dsg-servicing.html"><i class="fas fa-chevron-right"></i> Fluid & Filter Service</a></li>
+            <li><a href="service-haldex-servicing.html"><i class="fas fa-chevron-right"></i> Haldex 4WD Servicing</a></li>
+            <li><a href="service-mechatronic-repair.html"><i class="fas fa-chevron-right"></i> Mechatronic Rebuilds</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Direct Workshop Line</h4>
+          <div class="footer-contact-item"><i class="fas fa-phone-alt"></i><div><a href="tel:07989062449" style="color:#ffffff; font-weight:800;">07989 062449</a><div style="font-size:0.8125rem; color:var(--text-muted);">Adam - Lead Engineer</div></div></div>
+          <div class="footer-contact-item"><i class="fas fa-envelope"></i><div><a href="mailto:kirklandadam10@gmail.com" style="color:#ffffff;">kirklandadam10@gmail.com</a></div></div>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <div>&copy; 2026 DSG Gearbox Doctor. All rights reserved.</div>
+        <div class="footer-legal-links">
+          <a href="terms.html">Terms & Conditions</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="refunds.html">Refund & Return Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>

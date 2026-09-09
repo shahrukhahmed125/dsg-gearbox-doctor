@@ -1,0 +1,6 @@
+{
+  "name": "DSG Gearbox Doctor - Specialist Transmission & Haldex Solutions",
+  "description": "Premier UK specialists in DSG gearbox repair, mechatronics diagnostics, clutch replacement, and Haldex 4WD servicing for trade garages and retail customers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
