@@ -7,11 +7,10 @@
    4. Live Numerical Trust Metric Counters
    5. Dual Infinite Marquee Touch & Hover Handlers
    6. Interactive FAQ Accordion with Auto-Close
-   7. VRM Vehicle Registration Quick Lookup Simulator
-   8. High-Converting Booking Funnel & On-Screen Confirmation
-   9. Video & Diagnostic Interactive Modal Controller
-   10. Blog Category Filter System
-   11. Live Instagram Simulated Hearts & Likes
+   7. High-Converting Booking Funnel & On-Screen Confirmation
+   8. Video & Diagnostic Interactive Modal Controller
+   9. Blog Category Filter System
+   10. Live Instagram Simulated Hearts & Likes
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -65,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
         vx: (Math.random() - 0.5) * 0.4,
         vy: (Math.random() - 0.5) * 0.4,
         radius: Math.random() * 2 + 1,
-        color: Math.random() > 0.3 ? 'rgba(229, 9, 20, 0.4)' : 'rgba(0, 180, 216, 0.3)',
+        color: Math.random() > 0.3 ? 'rgba(229, 9, 20, 0.4)' : 'rgba(229, 9, 20, 0.3)',
       });
     }
 
@@ -235,54 +234,6 @@ document.addEventListener('DOMContentLoaded', function () {
         $body.slideDown(250);
         $item.addClass('active');
         $(this).attr('aria-expanded', 'true');
-      }
-    });
-
-    /* ------------------------------------------------------------------------
-       6. VEHICLE REGISTRATION (VRM) INSTANT LOOKUP SIMULATOR
-       ------------------------------------------------------------------------ */
-    $('#vrmLookupBtn').on('click', function () {
-      const regInput = $('#vrmInput').val().trim().toUpperCase();
-      const $result = $('#vrmResult');
-
-      if (!regInput || regInput.length < 3) {
-        $result.stop().slideDown(200).css('color', '#ef4444').html(`
-          <i class="fas fa-exclamation-triangle"></i> Please enter a valid UK registration number.
-        `);
-        return;
-      }
-
-      // Simulated VAG vehicle database matches
-      const sampleVehicles = [
-        { model: '2021 Volkswagen Golf R 2.0 TSI (315 bhp)', dsg: 'DQ381 7-Speed Wet Clutch DSG' },
-        { model: '2019 Audi S3 2.0 TFSI Quattro', dsg: 'DQ381 7-Speed DSG + Gen 5 Haldex' },
-        { model: '2017 Volkswagen Passat 2.0 TDI BlueMotion', dsg: 'DQ250 6-Speed Wet Clutch DSG' },
-        { model: '2018 SEAT Leon Cupra 300 2.0 TSI', dsg: 'DQ250 6-Speed DSG with VAQ Diff' },
-        { model: '2020 Audi RS3 2.5 TFSI Sportback', dsg: 'DQ500 7-Speed Heavy-Duty Wet DSG' },
-        { model: '2019 Skoda Octavia vRS 2.0 TSI', dsg: 'DQ381 7-Speed DSG' },
-        { model: '2016 Volkswagen Polo GTI 1.8 TSI', dsg: 'DQ200 7-Speed Dry Clutch DSG' }
-      ];
-
-      const randomIndex = Math.floor(Math.random() * sampleVehicles.length);
-      const vehicle = sampleVehicles[randomIndex];
-
-      $result.stop().slideDown(200).css('color', '#4ade80').html(`
-        <div style="font-weight: 800; color: #ffffff; margin-bottom: 0.25rem;">
-          <i class="fas fa-check-circle" style="color: #22c55e;"></i> Vehicle Identified: ${regInput}
-        </div>
-        <div><strong>Vehicle:</strong> ${vehicle.model}</div>
-        <div><strong>Transmission Spec:</strong> ${vehicle.dsg}</div>
-      `);
-
-      // Autofill vehicle field in form if available
-      $('#bookingVehicle').val(`${vehicle.model} (${vehicle.dsg})`).trigger('change');
-    });
-
-    // Enter key triggers VRM lookup
-    $('#vrmInput').on('keydown', function (e) {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        $('#vrmLookupBtn').trigger('click');
       }
     });
 
